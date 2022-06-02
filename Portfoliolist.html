@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>portfolio page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"  />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ 
+    <script>
+        $(document).ready(function(){
+            $('button.navbar-toggler').click(function(){
+    var navbar_obj = $($(this).data("target"));
+    navbar_obj.toggleClass("open");
+  });
+            $('#portfolio').addClass('active');
+            $('#home').removeClass('active');
+            $('#contact').removeClass('active');
+            $('.img-fluid').bind('click', function(){
+                window.open('portfoliopage.html', '_blank');
+                var data = portoliodata
+                for (var i = 0; i< data.length; i++)
+{
+
+    if (data[i].id == $(this).data('idref')){
+        var params = {
+            name: data[i].name,
+            artist: data[i].artist,
+            description: data[i].description,
+            image1: data[i].image1,
+            image2: data[i].image2,
+            image3: data[i].image3,
+            image4: data[i].image4,
+            image5: data[i].image5,
+            image6: data[i].image6,
+            videos: data[i].videos,
+        }
+        console.log(params);
+        localStorage.setItem('params', JSON.stringify(params));
+    }
+}
+            })
+        });
+        
+  
+    </script>
+  </head>
+  <body>
+    <script type="text/javascript" src="portoliodata.js" >
+    </script>
+    <div class="container" id="listportfolio">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg bg-transparent">
+            <div class="container">
+              <a class="navbar-brand" href="index.html"><h2>MACIEJOVSKY</h2></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="#navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              <div class="collapse navbar-collapse justify-content-end lateral-left" id="navbarText">
+                <ul class="nav navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" id="home" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" id="portfolio" href="Portfoliolist.html">Portfolio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="contact.html">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="container mt-5 text-center">
+            <div class="row">
+              <div class="col-md">
+                <img
+                data-idref="1"
+                src="https://source.unsplash.com/350x300/?camera, catering"
+                alt="sample2"
+                  class="rounded img-fluid pb-1"
+              />
+              </div>
+              <div class="col-md">
+                <img
+                data-idref="2"
+                onclick=""
+                src="https://source.unsplash.com/350x300/?events,studio"
+                alt="sample2"
+                  class="rounded img-fluid pb-1"
+              />
+              </div>
+              <div class="col-md">
+                <img
+                data-idref="3"
+                src="https://source.unsplash.com/350x300/?man,photos"
+                alt="sample2"
+                  class="rounded img-fluid pb-1"
+              />
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <img
+                    data-idref="4"
+                    src="https://source.unsplash.com/350x300/?wedding"
+                    alt="sample2"
+                      class="rounded img-fluid pb-1"
+                  />
+                </div>
+                <div class="col-md">
+                    <img
+                    data-idref="5"
+                    src="https://source.unsplash.com/350x300/?fashion, dress"
+                    alt="sample2"
+                      class="rounded img-fluid pb-1"
+                  />
+                </div>
+                <div class="col-md">
+                    <img
+                    data-idref="6"
+                    src="https://source.unsplash.com/350x300/?funeral,ceremony"
+                    alt="sample2"
+                      class="rounded img-fluid pb-1"
+                  />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md">
+                    <img
+                    data-idref="7"
+                    src="https://source.unsplash.com/350x300/?graduation,school"
+                    alt="sample2"
+                      class="rounded img-fluid pb-1"
+                  />
+                </div>
+                <div class="col-md">
+                    <img
+
+                    src="https://source.unsplash.com/350x300/?promotion,party"
+                    alt="sample2"
+                      class="rounded img-fluid pb-1"
+                  />
+                </div>
+                <div class="col-md">
+                    <img
+                    data-idref="8"
+                    src="https://source.unsplash.com/350x300/?cameraman,photostudio"
+                    alt="sample2"
+                    class="rounded img-fluid pb-1"
+                  />
+                </div>
+                
+              </div>
+              <div class="row ">
+                <div class="col-md">
+                    <img
+                    data-idref="9"
+                    src="https://source.unsplash.com/350x300/?meeting,board"
+                    alt="sample2"
+                      class="rounded img-fluid pb-1"
+                  />
+                </div>
+                <div class="col-md">
+                    <img
+                    data-idref="10"
+                    src="https://source.unsplash.com/350x300/?launch,party"
+                    alt="sample2"
+                      class="rounded img-fluid pb-1"
+                  />
+                </div>
+                <div class="col-md">
+                    <img
+                    data-idref="11"
+                    src="https://source.unsplash.com/350x300/?activation,photostudio"
+                    alt="sample2"
+                      class="rounded img-fluid pb-1"
+                  />
+                </div>
+                
+              </div>
+          </div>
+          <div class="footer text-center mb-3">
+            <h1>MACIEJOVSKY</h1>
+            <span class="text-mute">
+              &copy; Copyright 2019
+           </div>
+          
+    </div>
+    </body>
+</html>

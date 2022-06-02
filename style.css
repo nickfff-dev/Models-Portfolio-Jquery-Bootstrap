@@ -1,0 +1,141 @@
+html{
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: 'hidden'
+    
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+video{
+    width: 42vw;
+    
+}
+
+#video1{
+  width: 67vw;
+}
+video::-webkit-media-controls-enclosure{
+    border-radius: 0px !important;
+}
+
+
+video::-webkit-media-controls-fullscreen-button{
+    display: block !important;
+}
+
+@media(max-width:995px){
+    .navbar .navbar-collapse.collapsing{ 
+      height:auto !important;
+    }
+    .navbar .lateral-left{
+      left:-100%;
+      animation: slide-out-left 200ms forwards;
+    }
+    .navbar .lateral-left.open{ 
+      animation: slide-in-left 200ms forwards;
+    }
+    .navbar .lateral-right{
+      right:-100%;
+      animation: slide-out-right 200ms forwards;
+    }
+    .navbar .lateral-right.open{ 
+      animation: slide-in-right 200ms forwards;
+    }
+    .navbar .navbar-collapse{ 
+      top:0px; bottom:0px; 
+      position:fixed; 
+      width:80%; width:calc(100% - 60px); 
+      max-width:320px; 
+      height:auto !important;
+  
+      /* Optional styling */
+      background:#f8f8f8;
+      padding:30px;
+      top: 52px;
+    }
+    .navbar .lateral-left.open,
+    .navbar .lateral-right.open{
+      display:block !important;
+      overflow-y:auto;
+    }
+  }
+  
+  @keyframes slide-in-left{ 
+    0%		{ left:-100%; }
+    100%	{ left:0px; }
+  }
+  @keyframes slide-out-left{
+    0%		{ left:0px; }
+    100%	{ left:-100%; }
+  }
+  @keyframes slide-in-right{ 
+    0%		{ right:-100%; }
+    100%	{ right:0px; }
+  }
+  @keyframes slide-out-right{
+    0%		{ right:0px; }
+    100%	{ right:-100%; }
+  }
+
+
+
+
+.footer{
+  height: 20vh;
+  display: flex;
+  margin-top: 10vh;
+  flex-direction: column;
+  justify-content: end;
+
+}
+
+.footer h1{
+  font-size: 1.5rem;
+
+}
+
+.navbar-brand h2{
+  font-size: 1.5rem;
+  margin-top: 0px;
+  font-weight: bold;
+}
+
+.introh1{
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.nav-link.active{
+  font-weight: bold;
+}
+
+.recenttitle{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.seemore{
+  font-size: 1rem;
+}
+
+.rounded{
+  border-radius: 20px !important;
+}
+
+hr{
+  color: #a6c2e6;
+}
+
+h1, h2, h3, h4{
+  color: #3b4754;
+}
+
+p, span {
+  color: #798da3 ;
+}
+
+.social{
+  color: white !important;
+}
+

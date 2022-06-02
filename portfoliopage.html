@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>portfolio page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#portfolio').addClass('active');
+            $('#home').removeClass('active');
+            $('#contact').removeClass('active');
+            var storedData = localStorage.getItem('params');
+            if (storedData){
+                storedData = JSON.parse(storedData)
+                $('#modelname').text(storedData.name);
+                console.log(storedData.name);
+                $('#modelhandle').text("Model: @" + storedData.name);
+                $('#modelmakeup').text("MakeUp: " + storedData.artist);
+                $('#image1').attr('src', storedData.image1);
+                $('#image2').attr('src', storedData.image2);
+                $('#image3').attr('src', storedData.image3);
+                $('#image4').attr('src', storedData.image4);
+                $('#image5').attr('src', storedData.image5);
+                $('#image6').attr('src', storedData.image6);
+                
+                var playlist = storedData.videos
+                var controls = '<button class="controls btn-info"><i class="fas fa-arrow-right"></i></button>';
+                
+                let counter = 0;
+                var video = '<iframe src=' + playlist[counter] + ' width="640" height="360" frameborder="0" controls=true fullscreen" allowfullscreen></iframe><br/>';
+                $('#playlist').html(video);
+                $('#playlist').append(controls);
+              
+                // onclick next change src to next video
+                $('.fa-arrow-right').click(function(){
+                    counter >= playlist.length ? counter = 0 : counter++;
+                    var video = '<iframe src=' + playlist[counter] + ' width="640" height="360" frameborder="0" controls=true fullscreen" allowfullscreen></iframe><br/>';
+                    $('#playlist').html(video)
+                    $('#playlist').append(controls);
+                })
+            
+
+                // VIMEO
+              
+                
+                
+                
+
+            }
+        })
+    </script>
+  </head>
+  <body>
+    
+    <div class="container" id="portfoliopage">
+      <div class="container mb-5">
+        <nav class="navbar navbar-expand-lg bg-transparent">
+            <div class="container">
+              <a class="navbar-brand" href="index.html"><h2>MACIEJOVSKY</h2></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="#navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              <div class="collapse navbar-collapse justify-content-end lateral-left" id="navbarText">
+                <ul class="nav navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" id="home" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" id="portfolio" href="Portfoliolist.html">Portfolio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" id="contact" href="contact.html">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <hr>
+        <div class="col text-center">
+            <h1 id="modelname"></h1>
+            <img
+            src=""
+            alt="sample1"
+            id="image1"
+            class="rounded py-3 img-fluid"
+          />
+          <div class="mt-5 mb-5">
+              <br/>
+              
+          </div>
+          <div class="mt-5 mb-5">
+            <br/>
+              
+        </div>
+        <div class="text-center mb-4" id="playlist" >
+          
+          
+          </div>
+        <div class="col">
+            <img
+            src=""
+            alt="sample1"
+            class="rounded py-3 img-fluid"
+            id="image2"
+          />
+          <img
+            src=""
+            alt="sample1"
+            class="rounded  mb-5 img-fluid"
+            id="image3"
+          />
+        </div>
+           <div class="col">
+            <p id="modelhandle"></p>
+            <p id="modelmakeup"></p>
+           </div>
+           <hr>
+
+           <div class="col mb-5">
+               <h1 class="pb-5">See More:</h1>
+               <div class="row ">
+                <div class="col">
+                    <img
+                    src=""
+                    alt="sample2"
+                      class="rounded img-fluid pb-1"
+                      id="image4"
+                  />
+                </div>
+                <div class="col">
+                    <img
+                    src=""
+                    alt="sample2"
+                      class="rounded img-fluid pb-1"
+                        id="image5"
+                  />
+                </div>
+                <div class="col">
+                    <img
+                    src=""
+                    alt="sample2"
+                      class="rounded img-fluid pb-1"
+                        id="image6"
+                  />
+                </div>
+                
+              </div>
+           </div>
+
+           <div class="footer mb-3">
+            <h1>MACIEJOVSKY</h1>
+            <span class="text-mute">
+              &copy; Copyright 2019
+           </div>
+
+
+        </div>
+
+        </div>
+        </body>
+        </html>
